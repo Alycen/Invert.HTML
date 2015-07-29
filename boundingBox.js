@@ -12,6 +12,15 @@ boundingBox.prototype.Update = function() {
     this.r - [this.x + this.width, this.y, this.x + this.width, this.y + this.height];  // Right
 }
 
+boundingBox.prototype.CollidesWith = function(t,b,l,r) {
+    if (this.b > t || this.t < b || this.l > r || this.r < l)   
+        return true;
+    else
+        return false;
+}
+   
+/* * * * * * * * * * * * * * * * * * * */
+
 boundingBox.prototype.getX = function() {
     return this.x;
 }
@@ -27,6 +36,8 @@ boundingBox.prototype.getW = function() {
 boundingBox.prototype.getH = function() {
     return this.height;
 }
+
+/* * * * * * * * * * * * * * * * * * * */
 
 boundingBox.prototype.setX = function(x) {
     this.x = x;
@@ -44,6 +55,8 @@ boundingBox.prototype.setH = function(h) {
     this.height = h;
 }
 
+/* * * * * * * * * * * * * * * * * * * */
+
 boundingBox.prototype.getT = function() {
     return this.t;
 }
@@ -60,9 +73,3 @@ boundingBox.prototype.getR = function() {
     return this.r;
 }
 
-boundingBox.prototype.checkCollision = function(t,b,l,r) {
-    if (this.b > t || this.t < b || this.l > r || this.r < l)   
-        return true;
-    else
-        return false;
-}   
