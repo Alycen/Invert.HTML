@@ -2,18 +2,18 @@ function vector() {
     
 }
 
-vector.prototype.getX() {
+vector.prototype.getX = function() {
 
 }
 
-vector.prototype.setX(x) {
+vector.prototype.setX = function(x) {
 
 }
 
-vector.prototype.getY() {
+vector.prototype.getY = function() {
 
 }
 
-vector.prototype.setY(y) {
+vector.prototype.setY = function(y) {
 
 }

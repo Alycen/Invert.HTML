@@ -44,12 +44,12 @@ touchHandler.prototype.getY = function() {
 }
 
 touchHandler.prototype.invertVector = function() {
-    if(getX() > this.prevX)  
+//    if(getX() > this.prevX)  
         // move left -1
-    else if(getX() < this.prevX)
+//    else if(getX() < this.prevX)
         // move right +1
-    if(getY() > this.prevY)
+//    if(getY() > this.prevY)
         // move up -1 
-    else if(getY() < this.prevY)
+//    else if(getY() < this.prevY)
         // move down +1
 }   
