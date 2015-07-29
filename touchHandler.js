@@ -1,19 +1,21 @@
 function touchHandler() {
-        this.touches = [];
-        this.touchable;
+    this.touches = [];
+    this.touchable;
+    this.prevX;
+    this.prevY;
 }
 
 touchHandler.prototype.main = function() {
-        this.touchable = 'createTouch' in document;
-        if(this.touchable) {
+    this.touchable = 'createTouch' in document;
+    if(this.touchable) {
         game.canvas.addEventListener("touchstart",onTouchStart,false);
         game.canvas.addEventListener("touchmove",onTouchMove,false);
         game.canvas.addEventListener("touchend",onTouchEnd,false);
-        }
+    }
 }
 
 touchHandler.prototype.Draw = function() {
-        for(var i=0; i<this.touches.length; i++) {
+    for(var i=0; i<this.touches.length; i++) {
         var touch = this.touches[i];
         game.ctx.beginPath();
         game.ctx.strokeStyle = "blue";
@@ -24,16 +26,30 @@ touchHandler.prototype.Draw = function() {
 }
 
 touchHandler.prototype.getX = function() {
-        for(var i=0; i<this.touches.length; i++) {
-        var touch = this.touches[i];
+    for(var i=0; i<this.touches.length; i++) {
+        var touch = this.touches[i];i
+        if(i != 0)
+            prevX = this.touches[i-1].clientX;
         return touch.clientX;
     }
 }
 
 touchHandler.prototype.getY = function() {
-        for(var i=0; i<this.touches.length; i++) {
+    for(var i=0; i<this.touches.length; i++) {
         var touch = this.touches[i];
+        if(i != 0)
+            prevY = this.touches[i-1].clientY;
         return touch.clientY;
     }
 }
 
+touchHandler.prototype.invertVector = function() {
+    if(getX() > prevX)  
+        // move left -1
+    else if(getX() < prevX)
+        // move right +1
+    if(getY() > prevY)
+        // move up -1 
+    else if(getY() < prevY)
+        // move down +1
+}   

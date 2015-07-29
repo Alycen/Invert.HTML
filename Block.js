@@ -1,4 +1,4 @@
-function Player() {
+function Block() {
     this.x = 0;
     this.y = 0;
     this.width = 10;
@@ -7,22 +7,22 @@ function Player() {
     this.boundingBox = new boundingBox(this.x,this.y.this.width,this.height);
 }
 
-Player.prototype.Update = function() {
+Block.prototype.Update = function() {
     
 }
 
-Player.prototype.getX = function() {
+Block.prototype.getX = function() {
     return this.x;
 }
 
-Player.prototype.getY = function() {
+Block.prototype.getY = function() {
     return this.y;
 }
 
-Player.prototype.setX = function(x) {
+Block.prototype.setX = function(x) {
     this.x = x;
 }
 
-Player.prototype.setY = function(y) {
+Block.prototype.setY = function(y) {
     this.y = y;
 }
