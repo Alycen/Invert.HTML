@@ -29,7 +29,7 @@ touchHandler.prototype.getX = function() {
     for(var i=0; i<this.touches.length; i++) {
         var touch = this.touches[i];i
         if(i != 0)
-            prevX = this.touches[i-1].clientX;
+            this.prevX = this.touches[i-1].clientX;
         return touch.clientX;
     }
 }
@@ -38,18 +38,18 @@ touchHandler.prototype.getY = function() {
     for(var i=0; i<this.touches.length; i++) {
         var touch = this.touches[i];
         if(i != 0)
-            prevY = this.touches[i-1].clientY;
+            this.prevY = this.touches[i-1].clientY;
         return touch.clientY;
     }
 }
 
 touchHandler.prototype.invertVector = function() {
-    if(getX() > prevX)  
+    if(getX() > this.prevX)  
         // move left -1
-    else if(getX() < prevX)
+    else if(getX() < this.prevX)
         // move right +1
-    if(getY() > prevY)
+    if(getY() > this.prevY)
         // move up -1 
-    else if(getY() < prevY)
+    else if(getY() < this.prevY)
         // move down +1
 }   
