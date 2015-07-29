@@ -52,6 +52,5 @@ function onTouchMove(e) {
 function onTouchEnd(e) {
     e.preventDefault();
     game.touch.touches = e.touches;
-    game.stopTouch = false;
     //put an end check in here
 }
