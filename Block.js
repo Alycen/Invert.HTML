@@ -18,7 +18,7 @@ Block.prototype.Draw = function() {
     game.ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
 }
 
-Block.prototype.Move() {
+Block.prototype.Move = function() {
 
 }
 
