@@ -1,4 +1,4 @@
-function Block(type) {
+function Block(type) { // 1:Player;2:Wall;3:Menu;
     this.x = 0;
     this.y = 0;
     this.width = 10;

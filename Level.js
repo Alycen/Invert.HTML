@@ -1,8 +1,9 @@
-function Level() {
+function Level(lvl) {
 //    this.scale = 1;
     this.isVisible = false;
     this.bg = new Image();
-    this.bg.src = "assets/gfx/Background/lvl.png";
+    this.lvl = lvl;
+    this.bg.src = "assets/gfx/Background/lvl"+lvl+".png";
 }
 
 /*Level.prototype.getLevel = function() {
@@ -10,7 +11,12 @@ function Level() {
 }*/
 
 Level.prototype.setLevel = function(lvl) {
+	this.lvl = lvl;
     this.bg.src = "assets/gfx/Background/lvl"+lvl+".png";
+}
+
+Level.prototype.getLevel = function() {
+	return this.lvl
 }
 
 Level.prototype.Draw = function() {

@@ -14,11 +14,16 @@ var requestAnimFrame = (function() {
 function Game() {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innderHeight;
+    this.touch = new touchHandler();
+    this.player = new Block(1);
 }
 
 function main() {
     game = new Game();
-    
+    game.level = new Level(1);
+    game.touch.main();
+    game.initCanvas();
+    game.gameLoop();
 }
 
 Game.prototype.initCanvas = function() {
@@ -30,11 +35,16 @@ Game.prototype.initCanvas = function() {
 }
 
 Game.prototype.gameLoop = function() { 
-
+    game.Draw();
+    //game.getLevel();
+    window.requestAnimFrame(game.gameLoop);
 }
 
 Game.prototype.Draw = function() {
     this.ctx.clearRect(0,0,this.screenWidth,this.screenHeight);
+    game.level.Draw();
+    game.player.Draw();
+    game.touch.Draw();
 }
 
 //******************************//
