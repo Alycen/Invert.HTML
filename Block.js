@@ -1,5 +1,3 @@
-var PLAYER = 0, WALL = 1, BOULDER = 2, PICKUP = 3;
-
 function Block(type) {
     this.x = 0;
     this.y = 0;
@@ -8,10 +6,16 @@ function Block(type) {
     this.isVisible = false;
     this.boundingBox = new boundingBox(this.x,this.y.this.width,this.height);
     this.type = type;
+    this.img = new Image();
+    this.img.src = "assets/gfx/block"+type+".png"
 }
 
 Block.prototype.Update = function() {
     
+}
+
+Block.prototype.Draw = function()
+    game.ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
 }
 
 Block.prototype.Move() {

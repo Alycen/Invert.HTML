@@ -9,6 +9,10 @@ function Level() {
         return this.lvl;
 }*/
 
+Level.prototype.setLevel = function(lvl) {
+    this.bg.src = "assets/gfx/Background/lvl"+lvl+".png";
+}
+
 Level.prototype.Draw = function() {
     game.ctx.drawImage(this.bg,0,0,game.screenWidth,game.screenHeight);
 }
