@@ -1,8 +1,8 @@
 function Block(type) { // 1:Player;2:Wall;3:Menu;
     this.width = 10;
     this.height = 10;
-    this.x = (game.screenWidth / 2) - this.width;
-    this.y = (game.screenHeight / 2) - this.height;
+    this.x = game.screenWidth / 2 - this.width;
+    this.y = game.screenHeight / 2 - this.height;
     this.isVisible = false;
     this.boundingBox = new boundingBox(this.x,this.y.this.width,this.height);
     this.type = type;

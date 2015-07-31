@@ -15,12 +15,12 @@ function Game() {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innderHeight;
     this.touch = new touchHandler();
-    this.player = new Block(1);
 }
 
 function main() {
     game = new Game();
     game.level = new Level(1);
+    game.player = new Block(1);
     game.touch.main();
     game.initCanvas();
     game.gameLoop();
