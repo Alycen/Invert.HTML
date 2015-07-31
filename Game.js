@@ -19,10 +19,10 @@ function Game() {
 
 function main() {
     game = new Game();
+    game.initCanvas();
     game.level = new Level(1);
     game.player = new Block(0);
     game.touch.main();
-    game.initCanvas();
     game.gameLoop();
 }
 
