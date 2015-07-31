@@ -20,6 +20,7 @@ Level.prototype.getLevel = function() {
 }
 
 Level.prototype.Draw = function() {
+    console.log("Level draw");
     game.ctx.drawImage(this.bg,0,0,game.screenWidth,game.screenHeight);
 }
 

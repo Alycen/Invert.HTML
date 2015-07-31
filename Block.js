@@ -15,6 +15,7 @@ Block.prototype.Update = function() {
 }
 
 Block.prototype.Draw = function() {
+    console.log("Block Draw");
     game.ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
 }
 
