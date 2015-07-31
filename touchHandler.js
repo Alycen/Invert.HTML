@@ -1,8 +1,8 @@
 function touchHandler() {
     this.touches = [];
     this.touchable;
-    this.prevX;
-    this.prevY;
+    this.prevX = 0;
+    this.prevY = 0;
 }
 
 touchHandler.prototype.main = function() {
@@ -27,29 +27,29 @@ touchHandler.prototype.Draw = function() {
 
 touchHandler.prototype.getX = function() {
     for(var i=0; i<this.touches.length; i++) {
-        var touch = this.touches[i];i
-        if(i != 0)
-            this.prevX = this.touches[i-1].clientX;
+        touch = this.touches[i];
+        if(touch.clientX > this.prevX && touch.clientX != this.prevX)  
+            console.log("move left -1");
+        else if(touch.clientX < this.prevX && touch.clientX != this.prevX)
+            console.log("move right +1");
+        this.prevX = touch.clientX;
         return touch.clientX;
     }
+    
 }
 
 touchHandler.prototype.getY = function() {
     for(var i=0; i<this.touches.length; i++) {
-        var touch = this.touches[i];
-        if(i != 0)
-            this.prevY = this.touches[i-1].clientY;
+        if(touch.clientY > this.prevY && touch.clientY != this.prevY)
+            console.log("move up -1");
+        else if(touch.clientY < this.prevY && touch.clientY != this.prevY)
+            console.log("move down +1");
+        this.prevY = touch.clientY;
         return touch.clientY;
     }
+   
 }
 
 touchHandler.prototype.invertVector = function() {
-//    if(getX() > this.prevX)  
-        // move left -1
-//    else if(getX() < this.prevX)
-        // move right +1
-//    if(getY() > this.prevY)
-        // move up -1 
-//    else if(getY() < this.prevY)
-        // move down +1
+
 }   
