@@ -29,9 +29,9 @@ touchHandler.prototype.getX = function() {
     for(var i=0; i<this.touches.length; i++) {
         touch = this.touches[i];
         if(touch.clientX > this.prevX && touch.clientX != this.prevX)  
-            console.log("move left -1"); 	// game.player.move(1);
+            console.log("move left -1"); 	// game.player.Move(1);
         else if(touch.clientX < this.prevX && touch.clientX != this.prevX)
-            console.log("move right +1");	// game.player.move(2);
+            console.log("move right +1");	// game.player.Move(2);
         this.prevX = touch.clientX;
         return touch.clientX;
     }
@@ -41,9 +41,9 @@ touchHandler.prototype.getX = function() {
 touchHandler.prototype.getY = function() {
     for(var i=0; i<this.touches.length; i++) {
         if(touch.clientY > this.prevY && touch.clientY != this.prevY)
-            console.log("move up -1");		// game.player.move(3);
+            console.log("move up -1");		// game.player.Move(3);
         else if(touch.clientY < this.prevY && touch.clientY != this.prevY)
-            console.log("move down +1");	// game.player.move(4);
+            console.log("move down +1");	// game.player.Move(4);
         this.prevY = touch.clientY;
         return touch.clientY;
     }
