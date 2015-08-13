@@ -18,6 +18,8 @@ Block.prototype.Draw = function() {
     game.ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
 }
 
+// Move has a set speed right now. so the users input will not effect the block speed at all which could make confusing controls
+// might re think the logic once I can tesst it
 Block.prototype.Move = function(dir) {
     if (dir == 1) 	// UP
 	this.y -= 2;
