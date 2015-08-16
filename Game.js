@@ -20,7 +20,7 @@ function Game() {
 function main() {
     game = new Game();
     game.level = new Level(0);
-    game.player = new Block(((game.screenWidth/2)-(game.screenWidth/14)),((game.screenHeight/2)-(game.screenHeight/14)),40,40,0);
+    game.player = new Block(((game.screenWidth/2)-(game.screenWidth/14)),((game.screenHeight/2)-(game.screenHeight/14)),40,40,1);
     game.initCanvas();
     game.touch.main();
     game.gameLoop();
