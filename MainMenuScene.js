@@ -14,11 +14,11 @@ MainMenuScene.prototype.checkBounds = function() {
 		console.log("EXIT");
 		//window.history.back(-1);
 	}
-	if(this.player.x < 0) {
+	if(this.player.x + this.player.width < 0) {
 		game.scene = new GameScene();
 	}
-	else if (this.player.x + this.player.width > game.screenWidth) {
-		//game.scene = new SettingsScene();
+	else if (this.player.x > game.screenWidth) {
+		game.scene = new SettingsScene();
 		console.log("Settings");
 	}
 } 

@@ -5,8 +5,13 @@ function BaseScene() {
 	this.playerVisible = false;
 }
 
+BaseScene.prototype.checkBounds = function() {
+
+}
+
 BaseScene.prototype.Update = function() {
 	this.bBox = new BoundingBox(0,0,game.screenWidth,game.screenHeight);
+	this.checkBounds();
 }
 
 BaseScene.prototype.Draw = function() {
