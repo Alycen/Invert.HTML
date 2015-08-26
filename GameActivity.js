@@ -37,8 +37,6 @@ GameActivity.prototype.initCanvas = function() {
 
 GameActivity.prototype.gameLoop = function() { 
     game.Draw();
-    //game.checkLevel();
-    //game.getLevel();
     game.touch.getX();
     game.touch.getY();
     window.requestAnimFrame(game.gameLoop);
