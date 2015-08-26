@@ -1,18 +1,18 @@
-function boundingBox(x,y,w,h) {
+function BoundingBox(x,y,w,h) {
     this.x = x;
     this.y = y;
     this.width=w;
     this.height=h;
 }
 
-boundingBox.prototype.Update = function() {
+BoundingBox.prototype.Update = function() {
     this.t = [this.x, this.y, this.x + this.width, this.y];     // Top
     this.b = [this.x, this.y + this.height, this.x + this.width, this.y + this.height]; // Bottom
     this.l = [this.x, this.y, this.x, this.y + this.height];    // Left
     this.r - [this.x + this.width, this.y, this.x + this.width, this.y + this.height];  // Right
 }
 
-boundingBox.prototype.CollidesWith = function(t,b,l,r) {
+BoundingBox.prototype.CollidesWith = function(t,b,l,r) {
     if (this.b > t || this.t < b || this.l > r || this.r < l)   
         return true;
     else
@@ -21,55 +21,55 @@ boundingBox.prototype.CollidesWith = function(t,b,l,r) {
    
 /* * * * * * * * * * * * * * * * * * * */
 
-boundingBox.prototype.getX = function() {
+BoundingBox.prototype.getX = function() {
     return this.x;
 }
 
-boundingBox.prototype.getY = function() {
+BoundingBox.prototype.getY = function() {
     return this.y;
 }
 
-boundingBox.prototype.getW = function() {
+BoundingBox.prototype.getW = function() {
     return this.width;
 }
 
-boundingBox.prototype.getH = function() {
+BoundingBox.prototype.getH = function() {
     return this.height;
 }
 
 /* * * * * * * * * * * * * * * * * * * */
 
-boundingBox.prototype.setX = function(x) {
+BoundingBox.prototype.setX = function(x) {
     this.x = x;
 }
 
-boundingBox.prototype.setY = function(y) {
+BoundingBox.prototype.setY = function(y) {
     this.y = y;
 }
 
-boundingBox.prototype.setW = function(w) {
+BoundingBox.prototype.setW = function(w) {
     this.width = w;
 }
 
-boundingBox.prototype.setH = function(h) {
+BoundingBox.prototype.setH = function(h) {
     this.height = h;
 }
 
 /* * * * * * * * * * * * * * * * * * * */
 
-boundingBox.prototype.getT = function() {
+BoundingBox.prototype.getT = function() {
     return this.t;
 }
 
-boundingBox.prototype.getB = function() {
+BoundingBox.prototype.getB = function() {
     return this.b;
 }
 
-boundingBox.prototype.getL = function() {
+BoundingBox.prototype.getL = function() {
     return this.l;
 }
 
-boundingBox.prototype.getR = function() {
+BoundingBox.prototype.getR = function() {
     return this.r;
 }
 

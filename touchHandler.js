@@ -1,11 +1,11 @@
-function touchHandler() {
+function TouchHandler() {
     this.touches = [];
     this.touchable;
     this.prevX = 0;
     this.prevY = 0;
 }
 
-touchHandler.prototype.main = function() {
+TouchHandler.prototype.main = function() {
     this.touchable = 'createTouch' in document;
     if(this.touchable) {
         game.canvas.addEventListener("touchstart",onTouchStart,false);
@@ -14,7 +14,7 @@ touchHandler.prototype.main = function() {
     }
 }
 
-touchHandler.prototype.Draw = function() {
+TouchHandler.prototype.Draw = function() {
     for(var i=0; i<this.touches.length; i++) {
         var touch = this.touches[i];
         game.ctx.beginPath();
@@ -25,7 +25,7 @@ touchHandler.prototype.Draw = function() {
     }
 }
 
-touchHandler.prototype.getX = function() {
+TouchHandler.prototype.getX = function() {
     for(var i=0; i<this.touches.length; i++) {
         touch = this.touches[i];
         if(touch.clientX > this.prevX && touch.clientX != this.prevX) { 
@@ -42,7 +42,7 @@ touchHandler.prototype.getX = function() {
     
 }
 
-touchHandler.prototype.getY = function() {
+TouchHandler.prototype.getY = function() {
     for(var i=0; i<this.touches.length; i++) {
         if(touch.clientY > this.prevY && touch.clientY != this.prevY) {
             console.log("move up -1");		// 
@@ -58,6 +58,6 @@ touchHandler.prototype.getY = function() {
    
 }
 
-touchHandler.prototype.invertVector = function() {
+TouchHandler.prototype.invertVector = function() {
 
 }   

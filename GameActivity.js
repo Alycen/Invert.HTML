@@ -11,22 +11,23 @@ var requestAnimFrame = (function() {
         };
 })();
 
-function Game() {
+function GameActivity() {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
-    this.touch = new touchHandler();
+    this.touch = new TouchHandler();
 }
 
 function main() {
-    game = new Game();
+    game = new GameActivity();
     game.level = new Level(0);
-    game.player = new Block(((game.screenWidth/2)-(game.screenWidth/14)),((game.screenHeight/2)-(game.screenHeight/14)),40,40,1);
+    game.player = new Player(((game.screenWidth/2)-(game.screenWidth/14)),((game.screenHeight/2)-(game.screenHeight/14)),40,40);
+    game.SceneManager = new SceneManager();
     game.initCanvas();
     game.touch.main();
     game.gameLoop();
 }
 
-Game.prototype.initCanvas = function() {
+GameActivity.prototype.initCanvas = function() {
     this.canvas = document.createElement('canvas');
     this.ctx = this.canvas.getContext('2d');
     document.body.appendChild(this.canvas);
@@ -34,42 +35,39 @@ Game.prototype.initCanvas = function() {
     this.canvas.height  = this.screenHeight;
 }
 
-Game.prototype.gameLoop = function() { 
+GameActivity.prototype.gameLoop = function() { 
     game.Draw();
-    game.checkLevel();
+    //game.checkLevel();
     //game.getLevel();
     game.touch.getX();
     game.touch.getY();
     window.requestAnimFrame(game.gameLoop);
 }
 
-Game.prototype.Draw = function() {
+GameActivity.prototype.Draw = function() {
     this.ctx.clearRect(0,0,this.screenWidth,this.screenHeight);
     game.level.Draw();
     game.player.Draw();
     game.touch.Draw();
 }
 
-Game.prototype.setLevel = function(lvl) {
-    if(lvl==0)
-        game.level.setLevel(0);
-    //else if(lvl==1)
-    //    game.level.setLevel(1);
-    //else if(lvl==2)
-    //    game.level.setLevel(2);
-    //else if(lvl==3)
-    //    game.level.setLevel(3);
-    //else if(lvl==4)
-    //    game.level.setLevel(4);
+GameActivity.prototype.setScene = function(scene) {
+    if(scene==0)
+        game.SceneManager.setScene("splash");
+    //else if(scene==1)
+    //    game.SceneManager.setScene("mainMenu");
+    //else if(scene==2)
+    //    game.SceneManager.setScene("loading");
+    //else if(scene==3)
+    //    game.SceneManager.setScene("game");
 }
 
-Game.prototype.checkLevel = function() {
+GameActivity.prototype.checkScene = function() {
     if(game.level.getLevel()==0)
-        game.level.StartMenu();
+        MENU_SCENE;
     //else if(game.level.getLevel()==1)
 
 }
-
 
 //******************************//
 
