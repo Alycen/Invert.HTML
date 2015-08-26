@@ -57,19 +57,19 @@ BoundingBox.prototype.setH = function(h) {
 
 /* * * * * * * * * * * * * * * * * * * */
 
-BoundingBox.prototype.getT = function() {
-    return this.t;
-}
+// BoundingBox.prototype.getT = function() {
+//     return this.t;
+// }
 
-BoundingBox.prototype.getB = function() {
-    return this.b;
-}
+// BoundingBox.prototype.getB = function() {
+//     return this.b;
+// }
 
-BoundingBox.prototype.getL = function() {
-    return this.l;
-}
+// BoundingBox.prototype.getL = function() {
+//     return this.l;
+// }
 
-BoundingBox.prototype.getR = function() {
-    return this.r;
-}
+// BoundingBox.prototype.getR = function() {
+//     return this.r;
+// }
 
