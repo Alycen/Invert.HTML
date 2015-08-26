@@ -22,13 +22,13 @@ Block.prototype.Draw = function() {
 // might re think the logic once I can tesst it
 Block.prototype.Move = function(dir) {
     if (dir == 1) 	// UP
-	this.y -= 3;
+	   this.y -= 3;
     else if (dir == 2)	// DOWN
-	this.y += 3;
+	   this.y += 3;
     if (dir == 3)	// LEFT
-	this.x -= 3;
+	   this.x -= 3;
     else if (dir ==4)	// RIGHT
-	this.x += 3;
+	   this.x += 3;
 }
 
 Block.prototype.setType = function(type) {
