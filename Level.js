@@ -1,8 +1,8 @@
 function Level(lvl) {
 //    this.scale = 1;
 //    this.isVisible = false;
-    this.bg = new Image();
-    this.bg.src = "assets/gfx/Background/bg01.png";
+    //this.bg = new Image();
+    //this.bg.src = "assets/gfx/Background/bg01.png";
     this.lvl = lvl;
 }
 

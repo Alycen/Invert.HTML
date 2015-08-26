@@ -11,7 +11,6 @@ function Block(x,y,w,h,type) {
 
 Block.prototype.Update = function() {
     bBox = new BoundingBox(this.x,this.y,this.width,this.height)
-    this.img.src = "assets/gfx/block"+this.btype+".png";
 }
 
 Block.prototype.Draw = function() {

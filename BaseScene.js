@@ -3,6 +3,10 @@ function BaseScene() {
 	this.bBox;
 }
 
+BaseScene.prototype.checkBounds = function() {
+
+}
+
 BaseScene.prototype.Update = function() {
 	this.bBox = new BoundingBox(0,0,game.screenWidth,game.screenHeight);
 }
