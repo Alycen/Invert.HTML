@@ -15,7 +15,8 @@ MainMenuScene.prototype.checkBounds = function() {
 		//window.history.back(-1);
 	}
 	if(this.player.x + this.player.width < 0) {
-		game.scene = new GameScene();
+		//game.scene = new GameScene();
+		game.scene = new LoadingScene();
 	}
 	else if (this.player.x > game.screenWidth) {
 		game.scene = new SettingsScene();

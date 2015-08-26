@@ -23,3 +23,5 @@ GameScene.prototype.Update = function() {
 	this.checkBounds();
 	this.player.Update();
 }
+
+//GameScene.prototype.onBackButtonPressed = function() {}
