@@ -53,7 +53,3 @@ TouchHandler.prototype.getY = function() {
     }
    
 }
-
-TouchHandler.prototype.invertVector = function() {
-
-}   
