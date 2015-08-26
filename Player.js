@@ -4,7 +4,7 @@ function Player(x,y,w,h) {
 	this.width = w;
 	this.height = h;
 	this.img = new Image();
-	this.img.src = "assets/gfx/playerMint.png";;
+	this.img.src = "assets/gfx/playerMint.png";
 }
 
 Player.prototype = new Block() 
@@ -12,10 +12,10 @@ Player.prototype = new Block()
 
 }
 
-//var img = new Image();
-//var index = 0;
+/*var img = new Image();
+var index = 0;
 
-/*Player.prototype.Draw = function() {
+Player.prototype.Draw = function() {
 	x=0;
 	y=0;
 	this.img = new Image();
@@ -28,19 +28,17 @@ Player.prototype = new Block()
         frameSize = 1;
 
         setInterval(function () {
-            game.ctx.drawImage(img, x, y, frameSize, frameSize, 0, 0, 25, 25);
+            game.ctx.drawImage(img, x, 0, frameSize, frameSize, this.x, this.x, 100, 100);
             x += frameSize;
             index += 1;
             if(index >= 10) {
                 x = 0;
-                y = 0;
                 index = 0;
             }
             else if(x + frameSize > 10) {
                 x = 0;
-                y += frameSize;
             }
-        }, 1000/24);
+        }, 1000/30);
     };
 }*/
 

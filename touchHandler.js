@@ -29,10 +29,10 @@ TouchHandler.prototype.getX = function() {
     for(var i=0; i<this.touches.length; i++) {
         touch = this.touches[i];
         if(touch.clientX > this.prevX && touch.clientX != this.prevX) { 
-            game.player.Move(3);
+            game.scene.player.Move(3);
         }
         else if(touch.clientX < this.prevX && touch.clientX != this.prevX) {
-            game.player.Move(4);
+            game.scene.player.Move(4);
         }
         this.prevX = touch.clientX;
         return touch.clientX;
@@ -43,10 +43,10 @@ TouchHandler.prototype.getX = function() {
 TouchHandler.prototype.getY = function() {
     for(var i=0; i<this.touches.length; i++) {
         if(touch.clientY > this.prevY && touch.clientY != this.prevY) {
-            game.player.Move(1);
+            game.scene.player.Move(1);
         }
         else if(touch.clientY < this.prevY && touch.clientY != this.prevY) {
-            game.player.Move(2);
+            game.scene.player.Move(2);
         }
         this.prevY = touch.clientY;
         return touch.clientY;

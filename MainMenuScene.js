@@ -1,6 +1,7 @@
 function MainMenuScene() {
 	this.bg.src = "assets/gfx/Background/bg01.png";
-	// mainMenu should have its own player not game activity
+	this.player = new Player(((game.screenWidth/2)-(game.screenWidth/14)),((game.screenHeight/2)-(game.screenHeight/14)),40,40);
+	this.playerVisible = true;
 }
 
 MainMenuScene.prototype = new BaseScene() 
@@ -9,12 +10,21 @@ MainMenuScene.prototype = new BaseScene()
 }
 
 MainMenuScene.prototype.checkBounds = function() {
-	if(game.player.y < 0) {
+	if(this.player.y < 0) {
 		console.log("EXIT");
 		//window.history.back(-1);
 	}
-}
+	if(this.player.x < 0) {
+		game.scene = new GameScene();
+	}
+	else if (this.player.x + this.player.width > game.screenWidth) {
+		//game.scene = new SettingsScene();
+		console.log("Settings");
+	}
+} 
 
 MainMenuScene.prototype.Update = function() {
 	this.checkBounds();
+	this.player.Update();
 } 
+
