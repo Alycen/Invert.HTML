@@ -17,4 +17,4 @@ MainMenuScene.prototype.checkBounds = function() {
 
 MainMenuScene.prototype.Update = function() {
 	this.checkBounds();
-}
+} 
