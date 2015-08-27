@@ -47,7 +47,7 @@ GameActivity.prototype.Draw = function() {
     //game.level.Draw();
     game.scene.Draw();
     //game.player.Draw();
-    game.touch.Draw();
+    //game.touch.Draw();
 }
 
 GameActivity.prototype.setScene = function(scene) {
