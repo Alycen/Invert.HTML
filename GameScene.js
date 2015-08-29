@@ -1,6 +1,6 @@
 function GameScene() {
 	this.bg.src = "assets/gfx/Background/bg02.png";
-	this.player = new Player();
+	this.player = new Player(game.screenWidth - 40,((game.screenHeight/2)-(game.screenHeight/14)),40,40);
 	this.playerVisible = true;
 	this.level = new Level(1);
 }

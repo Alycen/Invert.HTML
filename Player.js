@@ -1,7 +1,3 @@
-function Player() {
-        
-}
-
 function Player(x,y,w,h) {
 	this.x = x;
 	this.y = y;
@@ -47,6 +43,7 @@ Player.prototype.Draw = function() {
 }*/
 
 Player.prototype.Move = function(dir) {
+    console.log("is moving");
     if (dir == 1) 	// UP
 	   this.y -= 3;
     else if (dir == 2)	// DOWN

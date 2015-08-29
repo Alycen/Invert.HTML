@@ -70,6 +70,7 @@ Level.prototype.Update = function() {
 		for ( y = 0; y < level_1.length; y ++) {
 			for ( x = 0; x < level_1[y].length; x ++) {
 				if (parseInt(level_1[y][x]) == PLAYER) {
+					delete game.scene.player;
 					game.scene.player = new Player(x*block_w,y*block_h,block_w,block_h);
 				}
 				if (parseInt(level_1[y][x]) == STOP) {
