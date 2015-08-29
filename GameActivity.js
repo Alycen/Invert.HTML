@@ -38,35 +38,18 @@ GameActivity.prototype.gameLoop = function() {
     game.touch.getX();
     game.touch.getY();
     game.scene.Update();
-    //game.player.Update();
     window.requestAnimFrame(game.gameLoop);
 }
 
 GameActivity.prototype.Draw = function() {
     this.ctx.clearRect(0,0,this.screenWidth,this.screenHeight);
-    //game.level.Draw();
     game.scene.Draw();
-    //game.player.Draw();
-    //game.touch.Draw();
+    game.touch.Draw();
 }
 
 GameActivity.prototype.setScene = function(scene) {
-    if(scene==0)
-        game.SceneManager.setScene("splash");
-    //else if(scene==1)
-    //    game.SceneManager.setScene("mainMenu");
-    //else if(scene==2)
-    //    game.SceneManager.setScene("loading");
-    //else if(scene==3)
-    //    game.SceneManager.setScene("game");
+
 }
-
-/*GameActivity.prototype.checkScene = function() {
-    if(game.level.getLevel()==0)
-        MENU_SCENE;
-    //else if(game.level.getLevel()==1)
-
-}*/
 
 //******************************//
 

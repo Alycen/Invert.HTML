@@ -1,3 +1,7 @@
+function Player() {
+        
+}
+
 function Player(x,y,w,h) {
 	this.x = x;
 	this.y = y;

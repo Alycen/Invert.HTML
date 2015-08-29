@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<level>
+    <tiles>
+        <row>444000333</row>
+        <row>003330003</row>
+        <row>000000003</row>
+        <row>000333303</row>
+        <row>000000003</row>
+        <row>003000000</row>
+        <row>003003000</row>
+        <row>003003000</row>
+        <row>003003001</row>
+        <row>003003000</row>
+        <row>003003333</row>
+        <row>003000000</row>
+        <row>003000000</row>
+        <row>003333300</row>
+        <row>000000000</row>
+        <row>000000000</row>
+    </tiles>
+</level>

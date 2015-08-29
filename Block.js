@@ -37,3 +37,13 @@ Block.prototype.setY = function(y) {
     this.y = y;
 }
 
+Block.prototype.setPos = function(x,y) {
+    this.x = x;
+    this.y = y;
+}
+
+Block.prototype.setDimensions = function(w,h) {
+    this.width = w;
+    this.height = h;
+}
+
