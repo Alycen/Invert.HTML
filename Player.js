@@ -43,13 +43,16 @@ Player.prototype.Draw = function() {
 }*/
 
 Player.prototype.Move = function(dir) {
-    console.log("is moving");
     if (dir == 1) 	// UP
-	   this.y -= 3;
+	   this.y -= 5;
     else if (dir == 2)	// DOWN
-	   this.y += 3;
+	   this.y += 5;
     if (dir == 3)	// LEFT
-	   this.x -= 3;
+	   this.x -= 5;
     else if (dir ==4)	// RIGHT
-	   this.x += 3;
+	   this.x += 5;
+}
+
+Player.prototype.Kill = function() {
+    
 }
