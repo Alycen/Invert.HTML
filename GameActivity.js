@@ -15,6 +15,9 @@ function GameActivity() {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.touch = new TouchHandler();
+    this.audio = new Audio('assets/mfx/bgm.ogg');
+    this.audioOn = true;
+    this.multiOn = false;
 }
 
 function main() {
@@ -34,6 +37,11 @@ GameActivity.prototype.initCanvas = function() {
 }
 
 GameActivity.prototype.gameLoop = function() { 
+    if(this.audioOn)
+        this.audio.play();
+    else if (this.audioOn == false)
+        this.audio.pause();
+
     game.Draw();
     game.touch.getX();
     game.touch.getY();
