@@ -11,7 +11,7 @@ function Block(x,y,w,h,type) {
 
 Block.prototype.Update = function() {
     //bBox = new BoundingBox(this.x,this.y,this.width,this.height)
-
+    this.isColliding();
 }
 
 Block.prototype.Draw = function() {
@@ -46,5 +46,17 @@ Block.prototype.setPos = function(x,y) {
 Block.prototype.isColliding = function() {
     var player = game.scene.player;
 
-    
+    rect1 = {x: player.getX(), y: player.getY(), width: player.width, height: player.height};
+    rect2 = {x: this.x, y: this.y, width: this.width, height: this.height};
+
+    if (rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x &&
+        rect1.y < rect2.y + rect2.height && rect1.height + rect1.y > rect2.y) {
+        if (this.btype == 1)
+            console.log("Barrier");
+        else if(this.btype == 2)
+            game.scene.player.Kill();
+        else if(this.btype == 3)
+            //game.scene.level = game.scene.level +1;
+    }
 }
+
