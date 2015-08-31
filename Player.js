@@ -1,6 +1,8 @@
 function Player(x,y,w,h) {
 	this.x = x;
 	this.y = y;
+    this.initialx = x;
+    this.initialy = y;
 	this.width = w;
 	this.height = h;
 	this.img = new Image();
@@ -54,5 +56,6 @@ Player.prototype.Move = function(dir) {
 }
 
 Player.prototype.Kill = function() {
-    
+    this.x = this.initialx;
+    this.y = this.initialy;
 }

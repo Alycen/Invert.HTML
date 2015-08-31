@@ -43,16 +43,8 @@ Block.prototype.setPos = function(x,y) {
     this.y = y;
 }
 
-Block.prototype.isColliding = function(player) {
-    t1 = [this.x,this.y,this.x+this.width,this.y];
-    b1 = [this.x,this.y+this.height,this.x+this.width,this.y+this.height];
-    l1 = [this.x,this.y,this.x,this.y+this.height];
-    r1 = [this.x+this.width,this.y,this.x+this.width,this.y+this.height];
-
-    t2 = [player.x,player.y, player.x+player.width,player.y];
-    b2 = [player.x,player.y+player.height, player.x+player.width,player.y+player.height];
-    l2 = [player.x,player.y, player.x,player.y+player.height];
-    r2 = [player.x+player.width,player.y, player.x+player.width,player.y+player.height];
+Block.prototype.isColliding = function() {
+    var player = game.scene.player;
 
     
 }
