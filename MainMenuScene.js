@@ -19,7 +19,6 @@ MainMenuScene.prototype.checkBounds = function() {
 	}
 	else if (this.player.x > game.screenWidth) {
 		game.scene = new SettingsScene();
-		console.log("Settings");
 	}
 } 
 
