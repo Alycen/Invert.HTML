@@ -8,6 +8,7 @@ function Player(x,y,w,h) {
 	this.img = new Image();
 	this.img.src = "assets/gfx/playerMint.png";
     this.speed = 5;
+    this.i = 50;
 }
 
 Player.prototype = new Block() 
@@ -15,35 +16,11 @@ Player.prototype = new Block()
 
 }
 
-/*var img = new Image();
-var index = 0;
-
-Player.prototype.Draw = function() {
-	x=0;
-	y=0;
-	this.img = new Image();
-	this.img.src = "assets/gfx/playerMint.png";
-	img = this.img;
-    this.img.onload = function() {
-        width = img.width;
-        height = img.height;
-        
-        frameSize = 1;
-
-        setInterval(function () {
-            game.ctx.drawImage(img, x, 0, frameSize, frameSize, this.x, this.x, 100, 100);
-            x += frameSize;
-            index += 1;
-            if(index >= 10) {
-                x = 0;
-                index = 0;
-            }
-            else if(x + frameSize > 10) {
-                x = 0;
-            }
-        }, 1000/30);
-    };
-}*/
+Player.prototype.Update = function() {
+    this.i --;
+    if ( this.i == 0)
+        this.i = 50;
+}
 
 Player.prototype.Move = function(dir) {
     if (dir == 1) 	// UP
@@ -66,4 +43,9 @@ Player.prototype.Stop = function() {
         this.speed = 0;
     else if(this.stop == false)
         this.speed = 5;
+}
+
+Player.prototype.Draw = function() {
+    game.ctx.drawImage(this.img,1 * this.i, 0, 1, 1, this.x, this.y, this.width, this.height);
+
 }
