@@ -11,8 +11,7 @@ MainMenuScene.prototype = new BaseScene()
 
 MainMenuScene.prototype.checkBounds = function() {
 	if(this.player.y < 0) {
-		console.log("EXIT");
-		//window.history.back(-1);
+		window.history.back(-1);
 	}
 	if(this.player.x + this.player.width < 0) {
 		//game.scene = new GameScene();

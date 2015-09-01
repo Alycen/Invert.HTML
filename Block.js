@@ -7,10 +7,10 @@ function Block(x,y,w,h,type) {
     this.btype = type;
     this.img = new Image();
     this.img.src = "assets/gfx/block"+type+".png";
+    //this.audio = new Audio('assets/mfx/thud.ogg');
 }
 
 Block.prototype.Update = function() {
-    //bBox = new BoundingBox(this.x,this.y,this.width,this.height)
     this.isColliding();
 }
 
@@ -51,12 +51,24 @@ Block.prototype.isColliding = function() {
 
     if (rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x &&
         rect1.y < rect2.y + rect2.height && rect1.height + rect1.y > rect2.y) {
-        if (this.btype == 1)
-            console.log("Barrier");
-        else if(this.btype == 2)
+        if (this.btype == 1) {
+            game.scene.player.stop = true;
+            //this.audio.play();
+        }
+        else if(this.btype == 2) {
             game.scene.player.Kill();
-        else if(this.btype == 3)
-            //game.scene.level = game.scene.level +1;
+            game.scene.hud.deduct();
+        }
+        else if(this.btype == 3) {
+            if (game.scene.level.lvl == 1)
+                game.scene.level.setLevel(2);
+            //else if(game.scene.level.lvl == 2)
+            //    game.scene.level.setLevel(3);
+            //else if(game.scene.level.lvl == 3)
+            //    game.scene = new MainMenuScene();
+        }
     }
+    else 
+        game.scene.player.stop = false;
 }
 

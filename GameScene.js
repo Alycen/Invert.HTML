@@ -1,6 +1,6 @@
 function GameScene() {
 	this.bg.src = "assets/gfx/Background/bg02.png";
-	this.player = new Player(game.screenWidth - 40,(((game.screenHeight/2)-(game.screenHeight/14)) + (game.screenHeight/16)),game.screenWidth/9,game.screenHeight/16);
+	this.player = new Player(game.screenWidth - 40,(((game.screenHeight/2)-(game.screenHeight/14)) + (game.screenHeight/16)),game.screenWidth/10,game.screenHeight/17);
 	this.playerVisible = true;
 	this.level = new Level(1);
 	this.hud = new HUD();
@@ -38,4 +38,8 @@ GameScene.prototype.Draw = function() {
 	this.player.Draw();
 	this.level.Draw();
 	this.hud.Draw();
+}
+
+GameScene.prototype.getLevel = function() {
+	return this.level.lvl;
 }

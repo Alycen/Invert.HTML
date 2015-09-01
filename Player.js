@@ -7,6 +7,7 @@ function Player(x,y,w,h) {
 	this.height = h;
 	this.img = new Image();
 	this.img.src = "assets/gfx/playerMint.png";
+    this.speed = 5;
 }
 
 Player.prototype = new Block() 
@@ -46,16 +47,23 @@ Player.prototype.Draw = function() {
 
 Player.prototype.Move = function(dir) {
     if (dir == 1) 	// UP
-	   this.y -= 5;
+	   this.y -= this.speed;
     else if (dir == 2)	// DOWN
-	   this.y += 5;
+	   this.y += this.speed;
     if (dir == 3)	// LEFT
-	   this.x -= 5;
+	   this.x -= this.speed;
     else if (dir ==4)	// RIGHT
-	   this.x += 5;
+	   this.x += this.speed;
 }
 
 Player.prototype.Kill = function() {
     this.x = this.initialx;
     this.y = this.initialy;
+}
+
+Player.prototype.Stop = function() {
+    if(this.stop)
+        this.speed = 0;
+    else if(this.stop == false)
+        this.speed = 5;
 }
