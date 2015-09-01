@@ -60,12 +60,21 @@ Block.prototype.isColliding = function() {
             game.scene.hud.deduct();
         }
         else if(this.btype == 3) {
-            if (game.scene.level.lvl == 1)
+            if (game.scene.level.lvl == 1) {
+                game.scene.hud.total += game.scene.hud.curr;
+                game.scene.hud.curr = 5;
                 game.scene.level.setLevel(2);
-            //else if(game.scene.level.lvl == 2)
+            }
+            //else if(game.scene.level.lvl == 2) {
             //    game.scene.level.setLevel(3);
-            //else if(game.scene.level.lvl == 3)
-            //    game.scene = new MainMenuScene();
+            //    game.scene.hud.total += game.scene.hud.curr;
+            //    game.scene.hud.curr = 5;
+            //}
+            //else if(game.scene.level.lvl == 3) {
+            //    game.scene = new EndScene();
+            //    game.scene.hud.total += game.scene.hud.curr;
+            //    game.scene.hud.curr = 5;
+            //}
         }
     }
     else 

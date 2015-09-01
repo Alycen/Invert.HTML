@@ -6,6 +6,7 @@ function HUD() {
 	this.width = game.screenWidth / 16;
 	this.height = game.screenHeight / 16;
 	this.curr = 5;
+	this.total;
 }
 
 HUD.prototype.Update = function() {
