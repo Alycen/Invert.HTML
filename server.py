@@ -6,16 +6,36 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 		return True
 
 	def open(self):
+		serverDict[self.request.remote_ip] = self
+		#sendToAllButPlayer(self)
+
+		print (serverDict)
+		print('Client IP: ' + self.request.remote_ip)
 		print("Websocket opened")
 
 	def on_message(self,message):
-		self.write_message("This message has been sent to the client!")
+		playerObject = json.loads(message)
+		playerObject = json.dumps(playerObject)
+
+		#sending the player object to the other players on the server!
+		print(playerObject)
+		sendToAllButPlayer(self, playerObject)	
+
+def sendToAll():
+	for key, value in serverDict.items():
+		print(key)
+		value.write_message(key)
+
+def sendToAllButPlayer(self, player):
+	for key, value in serverDict.items():
+		if value != self:
+			value.write_message(player)
+			
 
 app = tornado.web.Application([
 	(r'/test', WSHandler),
 	])
 
 if __name__ == '__main__':
-	#what is 8080
 	app.listen(8080)
 	tornado.ioloop.IOLoop.instance().start()

@@ -52,7 +52,7 @@ GameActivity.prototype.gameLoop = function() {
 GameActivity.prototype.Draw = function() {
     this.ctx.clearRect(0,0,this.screenWidth,this.screenHeight);
     game.scene.Draw();
-    game.touch.Draw();
+    //game.touch.Draw();
 }
 
 GameActivity.prototype.setScene = function(scene) {
